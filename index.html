@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch a Sketch-By Ulises Villa</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script type="text/javascript" src="js/colorpicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/themes.css" />
+    
+</head>
+
+
+
+<body>
+<div id="header">
+    <header>
+        <h1>Etch a Sketch</h1>
+    </header>
+</div>
+<div id="butons">
+    <button id="reset">Reset initial 16x16</button>
+    <button id="rainbow">Rainbow Mode</button>
+    <button id="drawmode">Draw Mode</button>
+</div>
+
+
+<div id="all">
+   <div id="form">
+        <label for="squares" class="form">How many squares per line?</label>
+        <div id="select">
+        <input id="squares" class="form" type="number" name="squares" value="5"/>
+
+        <input id="submit" class="form" type="submit" value="Ok" />
+        </div>
+    </div>
+
+    <div id="generalDiv" >
+        
+        <div id="container">
+            <!--Inserted divs-->
+        </div>
+
+        <div id="container2" style="display: none;">
+            <!--Inserted divs-->
+        </div>
+
+    
+
+    </div>
+
+
+
+    <div id="rightside">
+        <p>Try this one on Draw Mode 26x26</p>
+    <div id="imgsample">
+        <img src="img/rockman.png" width="250px"/>
+    </div>
+
+    <script type="text/javascript" src="js/etchasketch.js"></script>
+
+
+
+            <div id="color-picker" class="cp-default">
+            </div>
+        
+            <script type="text/javascript">
+        
+                ColorPicker(
+        
+                document.getElementById('color-picker'),
+        
+                    function(hex, hsv, rgb) {
+                        console.log(hsv.h, hsv.s, hsv.v);         // [0-359], [0-1], [0-1]
+                        console.log(rgb.r, rgb.g, rgb.b);         // [0-255], [0-255], [0-255]
+                        document.body.style.backgroundColor = hex;        // #HEX
+                    });
+        
+            </script>
+    </div>
+</div>
+</body>
+</html>
