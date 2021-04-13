@@ -4,28 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch a Sketch-By Ulises Villa</title>
-
+    <link rel="shortcut icon" href="draw2.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
-
-    <script type="text/javascript" src="js/colorpicker.js"></script>
     <link rel="stylesheet" type="text/css" href="css/themes.css" />
+    <script type="text/javascript" src="js/colorpicker.js"></script>
+    <script type="text/javascript" src="js/etchasketch.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/imageControl.js" defer></script>
+    <script src="https://kit.fontawesome.com/94235d9528.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
     <header>
         <h1>Etch a Sketch</h1>
     </header>
-
     <div id="buttons">
         <button id="reset" class="button">Reset initial 16x16</button>
         <button id="rainbow" class="button">Rainbow Mode</button>
         <button id="drawmode" class="button">Draw Mode</button>
     </div>
-
-
     <div id="content">
-        <div id="left">
+        <div id="left">  
             <div id="form">
                 <label for="squares" class="form-label">How many squares per line?</label>
                 <div id="select">
@@ -33,43 +32,41 @@
                     <input id="submit" class="form" type="submit" value="Ok" />
                 </div>
             </div>
-
             <div id="left-i">
-                <p>Try this one on Draw Mode 26x26</p>
-                <div id="imgsample">
-                    <img src="img/rockman.png" width="250px"/>
+                <div>
+                    <div class="changeImage">
+                        <i id="backward" class="fas fa-angle-double-left"></i>
+                        <span class="changeText">Change image</span>
+                        <i id="forward" class="fas fa-angle-double-right"></i>
+                    </div>
+                    <div id="imgsample">
+                        <img id='thumb' src="img/thumbs/36.png" width="250px"/>
+                    </div>
+                    <p>You can try to draw this</p>
                 </div>
-        
                 <div id="color-picker" class="cp-fancy">
                 </div>
             </div>
         </div>
-
         <div id="center">
             <div id="generalDiv" >
                 <div id="container">
                     <!--Inserted divs-->
                 </div>
-
                 <div id="container2" style="display: none;">
-                <!--Inserted divs-->
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Inserted Color Picker script-->
     <script type="text/javascript">
         ColorPicker(
         document.getElementById('color-picker'),
         function(hex, hsv, rgb) {
-            console.log(hsv.h, hsv.s, hsv.v);         // [0-359], [0-1], [0-1]
-            console.log(rgb.r, rgb.g, rgb.b);         // [0-255], [0-255], [0-255]
-            document.body.style.backgroundColor = hex;        // #HEX
+            console.log(hsv.h, hsv.s, hsv.v);         
+            console.log(rgb.r, rgb.g, rgb.b);    
+            document.body.style.backgroundColor = hex;        
         });
     </script>
-
-    <!-- Inserted Divs script-->
-    <script type="text/javascript" src="js/etchasketch.js"></script>
 </body>
 </html>

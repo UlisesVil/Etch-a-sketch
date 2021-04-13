@@ -1,11 +1,8 @@
 "use strict"
 
-//Grid Default 16x16
 
 let container= document.querySelector("#container");
 let container2=document.querySelector("#container2");
-//console.log(container);
-//console.log(container2);
 
 let num1=16;
 function createDivs(num1){
@@ -15,7 +12,6 @@ function createDivs(num1){
         container.appendChild(div);
         div.classList.add("grid");
     }
-    console.log(container);
 }
 
 function createDivs2(num1){
@@ -23,18 +19,15 @@ function createDivs2(num1){
         let div = document.createElement("div");
         container2.style.gridTemplateColumns = `repeat(${num1}, auto)`;
         container2.appendChild(div);
-        //console.log(container2);
         div.classList.add("grid");
     }
 }
-
 createDivs(num1);
 createDivs2(num1);
 
 //Change Color
 let div=document.querySelector("#container");
 div.addEventListener("mouseover", function(e){
-    //console.log(div.style.background);
     let color = Math.floor(Math.random() * Math.pow(256, 3)).toString(16);
     while(color.length < 6) {
         color = "0" + color;
@@ -44,11 +37,8 @@ div.addEventListener("mouseover", function(e){
 
 //Drawing Function
 let div2=document.querySelector("#container2");
-//console.log(div2);
 div2.addEventListener("click", function(e){
-    console.log(div2.style.background);
     e.target.style.backgroundColor = document.body.style.backgroundColor;
-    console.log(e.target.style.backgroundColor);
 });
 
 //Grid Size
@@ -56,20 +46,17 @@ let button = document.querySelector("#submit");
 button.addEventListener("click",function(){
     container.innerHTML = "";
     let squaresNum = document.querySelector("#squaresNum").value;
-    console.log(squaresNum);
     createDivs(squaresNum);
 });
 
 button.addEventListener("click",function(){
     container2.innerHTML = "";
     let squaresNum = document.querySelector("#squaresNum").value;
-    console.log(squaresNum);
     createDivs2(squaresNum)
 });
 
 //Reset
 let reset = document.querySelector("#reset");
-
 reset.addEventListener("click",function(){
     container.innerHTML = "";
     container2.innerHTML = "";
