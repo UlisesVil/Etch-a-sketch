@@ -12,6 +12,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="js/imageControl.js" defer></script>
     <script src="https://kit.fontawesome.com/94235d9528.js" crossorigin="anonymous"></script>
+
+    
+    <script type="text/javascript" src="js/html2canvas.0.4.1.min.js" defer></script>
+    <script type="text/javascript" src="js/canvas2image.min.js" defer></script>
 </head>
 
 <body>
@@ -22,7 +26,11 @@
         <button id="reset" class="button">Reset initial 16x16</button>
         <button id="rainbow" class="button">Rainbow Mode</button>
         <button id="drawmode" class="button">Draw Mode</button>
+       
     </div>
+    <div id="btnSaveCont">
+        <button id="btnSave" class="saveButton">Save Sketch</button>
+    </div>  
     <div id="content">
         <div id="left">  
             <div id="form">
@@ -58,6 +66,14 @@
             </div>
         </div>
     </div>
+
+
+    
+       
+
+
+
+
     <!-- Inserted Color Picker script-->
     <script type="text/javascript">
         ColorPicker(
@@ -68,5 +84,10 @@
             document.body.style.backgroundColor = hex;        
         });
     </script>
+
+
+
+
+
 </body>
 </html>
